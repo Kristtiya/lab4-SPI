@@ -23,6 +23,7 @@ SIMSUF = '.vcd'
 SIMU = 'gtkwave'
 
 DUMP_FN = 'cpu_dump.vcd'
+TEST_FOLDER = 'modules'
 
 possible_tests = []
 
@@ -79,7 +80,8 @@ def build_test_list(): #(boards, head):
     '''
     Goes through the base directory and adds each testbench to a list
     '''
-    # os.chdir(tests)
+    os.chdir(TEST_FOLDER)
+
     testFiles = glob.glob('*.t.v')
     # os.chdir(head)
     return testFiles
@@ -137,7 +139,7 @@ if __name__ == "__main__":
 
     '''
 
-    check_for_packages()
+    # check_for_packages()
 
     cwd = os.getcwd() #get working directory
     possible_tests = build_test_list()    # Get a list of all tests
