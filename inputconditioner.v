@@ -20,8 +20,10 @@ output reg  negativeedge    // 1 clk pulse at falling edge of conditioned
     reg[counterwidth-1:0] counter = 0;
     reg synchronizer0 = 0;
     reg synchronizer1 = 0;
-    
+    not inverseclk(negclk, clk);
     always @(posedge clk ) begin
+        positiveedge <= clk;
+        negativeedge <= negclk;
         if(conditioned == synchronizer1)
             counter <= 0;
         else begin
@@ -34,5 +36,9 @@ output reg  negativeedge    // 1 clk pulse at falling edge of conditioned
         end
         synchronizer0 <= noisysignal;
         synchronizer1 <= synchronizer0;
+    end
+    always @(negedge clk ) begin
+        positiveedge <= clk;
+        negativeedge <= negclk;
     end
 endmodule

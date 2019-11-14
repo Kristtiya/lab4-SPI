@@ -1,6 +1,7 @@
 //------------------------------------------------------------------------
 // Input Conditioner test bench
 //------------------------------------------------------------------------
+`include "inputconditioner.v" 
 
 module testConditioner();
 
@@ -11,19 +12,23 @@ module testConditioner();
     wire falling;
     
     inputconditioner dut(.clk(clk),
-    			 .noisysignal(pin),
-			 .conditioned(conditioned),
-			 .positiveedge(rising),
-			 .negativeedge(falling))
-
-
+    			         .noisysignal(pin),
+			             .conditioned(conditioned),
+			             .positiveedge(rising),
+			             .negativeedge(falling));
     // Generate clock (50MHz)
-    initial clk=0;
+    initial clk = 0;
     always #10 clk=!clk;    // 50MHz Clock
     
     initial begin
-    // Your Test Code
-    // Be sure to test each of the three conditioner functions:
-    // Synchronization, Debouncing, Edge Detection
+    $dumpfile("inputconditioner.vcd");
+        $dumpvars(0, dut);
+	repeat(3) begin 
+	    $display("%t |%d|", $time, clk, rising, falling); #10;
+	end
+	$display("... more execution (see waveform)");
+		$finish();
+	end
     
+    end
 endmodule
