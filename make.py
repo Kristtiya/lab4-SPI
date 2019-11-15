@@ -97,6 +97,7 @@ def run_test(test):
     testName = test[:-4] + SUF
     if testName in glob.glob('*' + SUF):
         printn.healthy_message("Running Iverilog...")
+        out = './' + testName
         os.system(out)
     else:
         printn.warning_message("Build failed")
