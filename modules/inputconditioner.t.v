@@ -23,12 +23,13 @@ module testConditioner();
     initial begin
     $dumpfile("inputconditioner.vcd");
         $dumpvars(0, dut);
-	repeat(3) begin 
-	    $display("%t |%d|", $time, clk, rising, falling); #10;
+	repeat(10) begin 
+        #10;
+	    $display("%t | %d | %d | %d |", $time, clk, rising, falling);
+
 	end
 	$display("... more execution (see waveform)");
 		$finish();
 	end
     
-    end
 endmodule
