@@ -6,7 +6,7 @@
 //      - parallel in, serial out
 //------------------------------------------------------------------------
 
-`include "shiftmodes.v"
+`include "shiftregmodes.v"
 
 module shiftregister
 #(parameter width = 8)
@@ -17,26 +17,30 @@ input               parallelLoad,       // 1 = Load shift reg with parallelDataI
 input  [width-1:0]  parallelDataIn,     // Load shift reg in parallel
 input               serialDataIn,       // Load shift reg serially
 output [width-1:0]  parallelDataOut,    // Shift reg data contents
-output              serialDataOut       // Positive edge synchronized
+output              serialDataOut,      // Positive edge synchronized
+
+input   [1:0]       mode
+
 );
 
-    reg [width-1:0]      shiftregistermem;
-    assign shiftregistermem = {width{1'b0}}
+    reg [width-1:0] shiftregistermem = 8'b0;
+    // assign shiftregistermem <= {width{1'b0}}
 
-    always @(peripheralClkEdge) begin
+    // always @(peripheralClkEdge) begin
 
-        `LSHIFT: begin shiftregistermem <= {shiftregistermem[width-2:0], serialDataIn}; end
+    //     `LSHIFT: begin shiftregistermem <= {shiftregistermem[width-2:0], serialDataIn}; end
 
-    end
+    // end
 
     always @(posedge clk) begin
-        case (mode)
 
+        shiftregistermem <= {shiftregistermem[width-2:0], serialDataIn};
+
+        case (mode)
             `HOLD:   begin shiftregistermem <= {shiftregistermem[width-1:0]}; end
             `PLOAD:  begin shiftregistermem <= {parallelDataIn[width-1:0]}; end
             `LSHIFT: begin shiftregistermem <= {shiftregistermem[width-2:0], serialDataIn}; end
             `RSHIFT: begin shiftregistermem <= {serialDataIn, shiftregistermem[width-1:1]}; end
-        
         endcase
     end
 
