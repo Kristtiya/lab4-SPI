@@ -17,7 +17,7 @@ module testConditioner();
 			             .positiveedge(rising),
 			             .negativeedge(falling));
     // Generate clock (50MHz)
-    initial clk = 0;
+    initial clk = 1;
     always #10 clk=!clk;    // 50MHz Clock
     
     initial begin
@@ -25,15 +25,15 @@ module testConditioner();
         $dumpvars(0, dut);
     repeat(10) begin 
     pin = 0;
-	$display("%t | %d | %d | %d | %d |%d |", $time, clk, pin, conditioned, rising, falling); #10;
+	$display("%t | %d | %d | %d | %d | %d |", $time, clk, pin, conditioned, rising, falling); #20;
 	end
     repeat(20) begin 
         pin = 1;
-	    $display("%t | %d | %d | %d | %d |%d |", $time, clk, pin, conditioned, rising, falling); #10;
+	    $display("%t | %d | %d | %d | %d | %d |", $time, clk, pin, conditioned, rising, falling); #20;
 	end
     repeat(50) begin 
     pin = 0;
-	$display("%t | %d | %d | %d | %d |%d |", $time, clk, pin, conditioned, rising, falling); #10;
+	$display("%t | %d | %d | %d | %d | %d |", $time, clk, pin, conditioned, rising, falling); #20;
 	end
 	$display("... more execution (see waveform)");
 		$finish();
