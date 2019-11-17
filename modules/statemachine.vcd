@@ -1,0 +1,192 @@
+$date
+	Sat Nov 16 18:09:14 2019
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ns
+$end
+$scope module TAKS $end
+$var reg 1 ! clk $end
+$var reg 1 " cs $end
+$scope module fsm $end
+$var wire 1 # CS_N $end
+$var wire 1 $ RW $end
+$var wire 1 % add_latch_we $end
+$var wire 1 ! clk $end
+$var wire 1 " cs $end
+$var wire 1 & enable $end
+$var wire 1 ' mem_we $end
+$var wire 1 ( misobuff $end
+$var wire 1 ) out $end
+$var wire 1 * shift_ref_we $end
+$var wire 1 + shiftregout $end
+$var reg 7 , tim [6:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b0 ,
+z+
+z*
+1)
+z(
+z'
+0&
+z%
+0$
+0#
+1"
+0!
+$end
+#5
+1!
+#10
+0!
+#15
+1!
+#20
+0!
+#25
+1!
+#30
+0!
+#35
+1!
+#40
+0!
+#45
+1!
+#50
+0!
+#55
+1!
+#60
+0!
+#65
+1!
+#70
+0!
+#75
+1!
+#80
+0!
+#85
+1!
+#90
+0!
+#95
+1!
+#100
+1&
+1#
+0!
+0"
+#105
+b1 ,
+1!
+#110
+0!
+#115
+b11 ,
+1!
+#120
+0!
+#125
+b111 ,
+1!
+#130
+0!
+#135
+b1111 ,
+1!
+#140
+0!
+#145
+b11111 ,
+1!
+#150
+0!
+#155
+b111111 ,
+1!
+#160
+0!
+#165
+0&
+0)
+1$
+b1111111 ,
+1!
+#170
+0!
+#175
+1&
+1)
+0$
+b1111110 ,
+1!
+#180
+0!
+#185
+b1111101 ,
+1!
+#190
+0!
+#195
+b1111011 ,
+1!
+#200
+0&
+0#
+0!
+1"
+#205
+b1110110 ,
+1!
+#210
+0!
+#215
+b1101100 ,
+1!
+#220
+0!
+#225
+b1011000 ,
+1!
+#230
+0!
+#235
+b110000 ,
+1!
+#240
+0!
+#245
+b1100000 ,
+1!
+#250
+0!
+#255
+b1000000 ,
+1!
+#260
+0!
+#265
+b0 ,
+1!
+#270
+0!
+#275
+1!
+#280
+0!
+#285
+1!
+#290
+0!
+#295
+1!
+#300
+0!
