@@ -23,10 +23,17 @@ module testConditioner();
     initial begin
     $dumpfile("inputconditioner.vcd");
         $dumpvars(0, dut);
-	repeat(10) begin 
-        #10;
-	    $display("%t | %d | %d | %d |", $time, clk, rising, falling);
-
+    repeat(10) begin 
+    pin = 0;
+	$display("%t | %d | %d | %d | %d |%d |", $time, clk, pin, conditioned, rising, falling); #10;
+	end
+    repeat(20) begin 
+        pin = 1;
+	    $display("%t | %d | %d | %d | %d |%d |", $time, clk, pin, conditioned, rising, falling); #10;
+	end
+    repeat(50) begin 
+    pin = 0;
+	$display("%t | %d | %d | %d | %d |%d |", $time, clk, pin, conditioned, rising, falling); #10;
 	end
 	$display("... more execution (see waveform)");
 		$finish();
