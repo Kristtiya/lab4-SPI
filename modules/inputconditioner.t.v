@@ -31,10 +31,62 @@ module testConditioner();
         pin = 1;
 	    $display("%t | %d | %d | %d | %d | %d |", $time, clk, pin, conditioned, rising, falling); #20;
 	end
-    repeat(50) begin 
+    repeat(10) begin 
+    pin = 0;
+	$display("%t | %d | %d | %d | %d | %d |", $time, clk, pin, conditioned, rising, falling); #20;
+    end
+    repeat(5) begin 
+        pin = 1;
+	    $display("%t | %d | %d | %d | %d | %d |", $time, clk, pin, conditioned, rising, falling); #20;
+	end
+
+    repeat(10) begin 
     pin = 0;
 	$display("%t | %d | %d | %d | %d | %d |", $time, clk, pin, conditioned, rising, falling); #20;
 	end
+
+    repeat(10) begin   //Ensure super noisy singal does not send posedge or negedge signals 
+        pin = 1;
+	    $display("%t | %d | %d | %d | %d | %d |", $time, clk, pin, conditioned, rising, falling); #20;
+        pin = 0;
+	    $display("%t | %d | %d | %d | %d | %d |", $time, clk, pin, conditioned, rising, falling); #20;
+	end
+
+    repeat(10) begin 
+    pin = 0;
+	$display("%t | %d | %d | %d | %d | %d |", $time, clk, pin, conditioned, rising, falling); #20;
+	end
+
+    repeat(5) begin  //Short Signal _too short for wait-time so should not send posedge or negedge outputs 
+        pin = 1;
+	    $display("%t | %d | %d | %d | %d | %d |", $time, clk, pin, conditioned, rising, falling); #20;
+	end
+
+    repeat(10) begin 
+    pin = 0;
+	$display("%t | %d | %d | %d | %d | %d |", $time, clk, pin, conditioned, rising, falling); #20;
+	end
+
+    repeat(4) begin  //Short Signal _too short for wait-time so should not send posedge or negedge outputs 
+        pin = 1;
+	    $display("%t | %d | %d | %d | %d | %d |", $time, clk, pin, conditioned, rising, falling); #20;
+	end
+
+    repeat(10) begin 
+    pin = 0;
+	$display("%t | %d | %d | %d | %d | %d |", $time, clk, pin, conditioned, rising, falling); #20;
+	end
+
+    repeat(3) begin  //Short Signal _too short for wait-time so should not send posedge or negedge outputs 
+        pin = 1;
+	    $display("%t | %d | %d | %d | %d | %d |", $time, clk, pin, conditioned, rising, falling); #20;
+	end
+
+    repeat(10) begin 
+    pin = 0;
+	$display("%t | %d | %d | %d | %d | %d |", $time, clk, pin, conditioned, rising, falling); #20;
+	end
+
 	$display("... more execution (see waveform)");
 		$finish();
 	end
