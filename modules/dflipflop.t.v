@@ -1,14 +1,14 @@
-`include "addresslatch.v"
+`include "dflipflop.v"
 
-module Address_Latch_Test();
-    reg[6:0] D;
+module d_flipflop_test();
+    reg D;
     reg clk;
     reg enable;
 
-    wire reg[6:0] Q;
+    wire reg Q;
 
 
-    Address_Latch dut(.D(D),
+    d_flipflop dut(.D(D),
                       .clk(clk),
                       .enable(enable),
                       .Q(Q));
@@ -19,10 +19,10 @@ module Address_Latch_Test();
     
     initial begin
         repeat(10) begin 
-        D = 8'd7; enable = 1; #10;
+        D = 1; enable = 1; #10;
         $display("%t | %d | %b | %b |", $time, clk, D, Q);#10;
         end
         $finish();
     end
 
-endmodule
+endmodulet

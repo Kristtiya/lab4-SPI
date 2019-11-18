@@ -6,6 +6,9 @@
 `include "shiftregister.v"
 `include "datamemory.v"
 `include "addresslatch.v"
+`include "dflipflop.v"
+`include "enable_not.v"
+
 module spiMemory
 (
     input           clk,        // FPGA clock
@@ -32,11 +35,11 @@ module spiMemory
     wire add_latch_we;
 
     wire[7:0] parallelDataOut;
-    wire rewr;
     wire[7:0] parallelDataIn;
     wire RW;
     wire[6:0] data_address;
-    
+    wire serialDataOut;
+    wire Q_S_out;
 
 inputconditioner MOSI_cond(.conditioned(cond_mosi), .positiveedge(posedge0), .negativeedge(negeedge0), .noisysignal(mosi_pin), .clk(clk));
 inputconditioner SCLK_cond(.conditioned(cond_sclk), .positiveedge(posedge1), .negativeedge(negedge1), .noisysignal(sclk_pin), .clk(clk));
@@ -50,5 +53,10 @@ datamemory Data_Memory(.dataOut(dataMemOut), .address(data_address), .writeEnabl
 statemachine FSM(.misobuff(misobuff), .mem_we(mem_we), .add_latch_we(add_latch_we), .RW(RW), .shiftregout(serialDataOut), .cs(cond_cs), .clk(clk));
 
 Address_Latch addr_latch(.Q(data_address), .D(parallelDataOut), .enable(add_latch_we), .clk(clk));
+
+d_flipflop DFF(.Q(Q_S_out), .D(serialDataOut), .enable(negedge1), .clk(clk);
+
+enablenot e_not(.out(miso_pin), .enable(misobuff), .data_in(Q_S_out);
+
 endmodule
 
