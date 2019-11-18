@@ -22,11 +22,6 @@ output   reg        rewr                  //1 for write, 0 for read
 
 );
 
-    // always 
-    // or orgate[7:0](parallelDataOut, parallelDataIn, 8'b0); 
-
-    assign parallelDataOut <= parallelDataIn;
-
     always @(parallelDataIn[7])
         rewr <= parallelDataIn[7];
 
