@@ -5,11 +5,6 @@
 `timescale 1ns / 1ps
 
 `include "shiftregister.v"
-`include "shiftregmodes.v"
-
-`define ASSERT_EQ(val, exp, msg) \
-  if (val !== exp) $display("[FAIL] %s (got:0b%b expected:0b%b)", msg, val, exp);
-
 
 module testshiftregister();
 
@@ -20,7 +15,7 @@ module testshiftregister();
     wire            serialDataOut;
     reg[7:0]        parallelDataIn;
     reg             serialDataIn; 
-    wire           rewr;
+    wire            rewr;
 
 
     // Instantiate with parameter width = 8
@@ -34,22 +29,23 @@ module testshiftregister();
                        .rewr(rewr));
     
 
-    initial begin
-
-        `ifdef DUMPS
-        $dumpfile("shiftregister.vcd");
-        $dumpvars(0, dut);
-        `endif    
-
-        //Test PARALLEL LOAD
-        serialDataIn=1'b1; parallelDataIn=8'b10101100;
-        @(peripheralClkEdge); #10   `ASSERT_EQ(parallelDataOut, 8'b10101100, "PARALLEL LOAD")
+        initial begin
+        $display("testing");
 
 
+		$monitor(" %b | %b | %b | %b | %b", peripheralClkEdge, parallelDataIn, serialDataIn, parallelDataOut, serialDataOut, rewr);
+		peripheralClkEdge=1'b1; parallelLoad = 1'b1; parallelDataIn = 8'b10101010; serialDataIn = 1'b1; #100
 
-    #20 $finish();  // End the simulation (otherwise the clock will keep running forever)
+		peripheralClkEdge=1'b0; parallelLoad = 1'b1; parallelDataIn = 8'b10101010; serialDataIn = 1'b1; #100
 
-    end
+		peripheralClkEdge=1'b1; parallelLoad = 1'b1; parallelDataIn = 8'b10101010; serialDataIn = 1'b0; #100
+
+	    peripheralClkEdge=1'b0; parallelLoad = 1'b1; parallelDataIn = 8'b10101010; serialDataIn = 1'b1; #100
+
+
+
+		$display("END");
+	end
 
 endmodule
 

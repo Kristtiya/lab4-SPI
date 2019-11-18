@@ -21,6 +21,8 @@ output              serialDataOut,      // Positive edge synchronized
 output   reg        rewr                  //1 for write, 0 for read
 
 );
+    always @(parallelLoad)
+        parallelDataOut <= parallelDataIn;
 
     always @(parallelDataIn[7])
         rewr <= parallelDataIn[7];
