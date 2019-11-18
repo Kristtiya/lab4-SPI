@@ -49,7 +49,6 @@ datamemory Data_Memory(.dataOut(dataMemOut), .address(data_address), .writeEnabl
 
 statemachine FSM(.misobuff(misobuff), .mem_we(mem_we), .add_latch_we(add_latch_we), .RW(RW), .shiftregout(serialDataOut), .cs(cond_cs), .clk(clk));
 
-
 Address_Latch addr_latch(.Q(data_address), .D(parallelDataOut), .enable(add_latch_we), .clk(clk));
 endmodule
 
