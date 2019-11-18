@@ -18,7 +18,7 @@ output reg  negativeedge    // 1 clk pulse at falling edge of conditioned
     initial positiveedge = 0;
     initial negativeedge = 0;
     initial conditioned = 0;
-    
+
     parameter counterwidth = 3; // Counter size, in bits, >= log2(waittime)
     parameter waittime = 3;     // Debounce delay, in clock cycles
     
@@ -51,9 +51,16 @@ output reg  negativeedge    // 1 clk pulse at falling edge of conditioned
             signal <= 1'b0;
         else
             signal <= 1'b1;
-        assign positiveedge = conditioned & (~signal);
         assign negativeedge = ~conditioned & (signal);
 
         end
+    always @ (posedge clk or posedge conditioned)
+        begin
+        if (~conditioned)
+            signal <= 1'b0;
+        else
+            signal <= 1'b1;
+        assign positiveedge = conditioned & (~signal);
 
+        end
 endmodule
