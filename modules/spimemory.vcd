@@ -1,0 +1,495 @@
+$date
+	Sun Nov 17 23:41:49 2019
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module SPI_Test $end
+$scope module dut $end
+$var wire 1 ! clk $end
+$var wire 1 " cs_pin $end
+$var wire 1 # misobuff $end
+$var wire 1 $ mosi_pin $end
+$var wire 1 % sclk_pin $end
+$var wire 1 & serialDataOut $end
+$var wire 1 ' posedge2 $end
+$var wire 1 ( posedge1 $end
+$var wire 1 ) posedge0 $end
+$var wire 8 * parallelDataOut [7:0] $end
+$var wire 1 + negedge2 $end
+$var wire 1 , negedge1 $end
+$var wire 1 - negedge0 $end
+$var wire 1 . miso_pin $end
+$var wire 1 / mem_we $end
+$var wire 7 0 data_address [6:0] $end
+$var wire 1 1 dataMemOut $end
+$var wire 1 2 cond_sclk $end
+$var wire 1 3 cond_mosi $end
+$var wire 1 4 cond_cs $end
+$var wire 1 5 add_latch_we $end
+$var wire 1 6 RW $end
+$var wire 1 7 Q_S_out $end
+$scope module CS_cond $end
+$var wire 1 ! clk $end
+$var wire 1 " noisysignal $end
+$var reg 1 4 conditioned $end
+$var reg 3 8 counter [2:0] $end
+$var reg 1 + negativeedge $end
+$var reg 1 ' positiveedge $end
+$var reg 1 9 signal $end
+$var reg 1 : synchronizer0 $end
+$var reg 1 ; synchronizer1 $end
+$upscope $end
+$scope module DFF $end
+$var wire 1 ! clk $end
+$var wire 1 , enable $end
+$var wire 1 & D $end
+$var reg 1 7 Q $end
+$upscope $end
+$scope module Data_Memory $end
+$var wire 7 < address [6:0] $end
+$var wire 1 ! clk $end
+$var wire 1 / writeEnable $end
+$var wire 8 = dataIn [7:0] $end
+$var reg 8 > dataOut [7:0] $end
+$upscope $end
+$scope module FSM $end
+$var wire 1 ? CS_N $end
+$var wire 1 ! clk $end
+$var wire 1 4 cs $end
+$var wire 1 @ enable $end
+$var wire 1 / mem_we $end
+$var wire 1 # misobuff $end
+$var wire 1 A out $end
+$var wire 1 & shiftregout $end
+$var wire 1 6 RW $end
+$var reg 1 5 add_latch_we $end
+$var reg 15 B tim [14:0] $end
+$scope begin genblk1[1] $end
+$upscope $end
+$scope begin genblk1[2] $end
+$upscope $end
+$scope begin genblk1[3] $end
+$upscope $end
+$scope begin genblk1[4] $end
+$upscope $end
+$scope begin genblk1[5] $end
+$upscope $end
+$scope begin genblk1[6] $end
+$upscope $end
+$scope begin genblk1[7] $end
+$upscope $end
+$scope begin genblk1[8] $end
+$upscope $end
+$scope begin genblk1[9] $end
+$upscope $end
+$scope begin genblk1[10] $end
+$upscope $end
+$scope begin genblk1[11] $end
+$upscope $end
+$scope begin genblk1[12] $end
+$upscope $end
+$scope begin genblk1[13] $end
+$upscope $end
+$scope begin genblk1[14] $end
+$upscope $end
+$upscope $end
+$scope module MOSI_cond $end
+$var wire 1 ! clk $end
+$var wire 1 $ noisysignal $end
+$var reg 1 3 conditioned $end
+$var reg 3 C counter [2:0] $end
+$var reg 1 - negativeedge $end
+$var reg 1 ) positiveedge $end
+$var reg 1 D signal $end
+$var reg 1 E synchronizer0 $end
+$var reg 1 F synchronizer1 $end
+$upscope $end
+$scope module SCLK_cond $end
+$var wire 1 ! clk $end
+$var wire 1 % noisysignal $end
+$var reg 1 2 conditioned $end
+$var reg 3 G counter [2:0] $end
+$var reg 1 , negativeedge $end
+$var reg 1 ( positiveedge $end
+$var reg 1 H signal $end
+$var reg 1 I synchronizer0 $end
+$var reg 1 J synchronizer1 $end
+$upscope $end
+$scope module addr_latch $end
+$var wire 1 ! clk $end
+$var wire 1 5 enable $end
+$var wire 8 K D [7:0] $end
+$var reg 8 L Q [7:0] $end
+$upscope $end
+$scope module e_not $end
+$var wire 1 7 data_in $end
+$var wire 1 # enable $end
+$var reg 1 . out $end
+$upscope $end
+$scope module shift_register $end
+$var wire 1 ! clk $end
+$var wire 8 M parallelDataIn [7:0] $end
+$var wire 1 ( peripheralClkEdge $end
+$var wire 1 3 serialDataIn $end
+$var wire 1 & serialDataOut $end
+$var wire 1 6 parallelLoad $end
+$var reg 8 N parallelDataOut [7:0] $end
+$var reg 1 6 rewr $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b0x N
+b0x M
+b0 L
+b0x K
+0J
+0I
+xH
+b0 G
+0F
+0E
+xD
+b0 C
+b0 B
+1A
+1@
+1?
+bx >
+b0x =
+b0 <
+0;
+0:
+x9
+b0 8
+07
+06
+05
+04
+03
+02
+x1
+b0 0
+0/
+0.
+0-
+0,
+0+
+b0x *
+0)
+0(
+0'
+0&
+0%
+0$
+z#
+0"
+0!
+$end
+#10
+0@
+0A
+09
+b1 B
+0D
+0H
+x+
+x-
+x,
+1!
+#20
+0!
+#30
+b10 B
+0+
+0-
+0,
+1!
+#40
+0!
+#50
+b100 B
+1!
+#60
+0!
+#70
+b1000 B
+1!
+#80
+0!
+#90
+b10000 B
+1!
+#100
+0!
+1$
+#110
+b100000 B
+1E
+1!
+#120
+0!
+#130
+1F
+b1000000 B
+1!
+#140
+0!
+#150
+15
+b10000000 B
+b1 C
+1!
+#160
+0!
+#170
+05
+b0x 0
+b0x <
+b10 C
+b100000000 B
+b0x L
+1!
+#180
+0!
+#190
+b1000000000 B
+b11 C
+1!
+#200
+0!
+1%
+#210
+1D
+1)
+13
+b0 C
+1I
+b10000000000 B
+1!
+#220
+0!
+#230
+b100000000000 B
+1J
+0)
+1!
+#240
+0!
+#250
+b1 G
+b1000000000000 B
+1!
+#260
+0!
+#270
+b10000000000000 B
+b10 G
+1!
+#280
+0!
+#290
+b11 G
+b100000000000000 B
+1!
+#300
+0!
+0$
+#310
+b0x1 *
+b0x1 =
+b0x1 K
+b0x1 N
+1H
+1@
+1A
+1(
+b0 B
+12
+b0 G
+0E
+1!
+#320
+0!
+#330
+0@
+0A
+b0x11 *
+b0x11 =
+b0x11 K
+b0x11 N
+0F
+b1 B
+0(
+1!
+#340
+0!
+#350
+b10 B
+b1 C
+1!
+#360
+0!
+#370
+b10 C
+b100 B
+1!
+#380
+0!
+#390
+b1000 B
+b11 C
+1!
+#400
+0!
+0%
+#410
+0D
+1-
+03
+b0 C
+0I
+b10000 B
+1!
+#420
+0!
+#430
+b100000 B
+0J
+0-
+1!
+#440
+0!
+#450
+b1 G
+b1000000 B
+1!
+#460
+0!
+#470
+15
+b10000000 B
+b10 G
+1!
+#480
+0!
+#490
+05
+b0x11 0
+b0x11 <
+b11 G
+b100000000 B
+b0x11 L
+1!
+#500
+0!
+#510
+0H
+1,
+b1000000000 B
+02
+b0 G
+1!
+#520
+0!
+#530
+b10000000000 B
+0,
+1!
+#540
+0!
+#550
+b100000000000 B
+1!
+#560
+0!
+#570
+b1000000000000 B
+1!
+#580
+0!
+#590
+b10000000000000 B
+1!
+#600
+0!
+1%
+#610
+1I
+b100000000000000 B
+1!
+#620
+0!
+#630
+1@
+1A
+b0 B
+1J
+1!
+#640
+0!
+#650
+0@
+0A
+b1 G
+b1 B
+1!
+#660
+0!
+#670
+b10 B
+b10 G
+1!
+#680
+0!
+#690
+b11 G
+b100 B
+1!
+#700
+0!
+#710
+b0x110 *
+b0x110 =
+b0x110 K
+b0x110 N
+1H
+1(
+b1000 B
+12
+b0 G
+1!
+#720
+0!
+#730
+b0x1100 *
+b0x1100 =
+b0x1100 K
+b0x1100 N
+b10000 B
+0(
+1!
+#740
+0!
+#750
+b100000 B
+1!
+#760
+0!
+#770
+b1000000 B
+1!
+#780
+0!
+#790
+15
+b10000000 B
+1!
+#800
+0!
