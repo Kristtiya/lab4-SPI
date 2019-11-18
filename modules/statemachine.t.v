@@ -7,6 +7,7 @@ module TAKS();
 
     reg clk;
     reg cs;
+    reg rw;
 
     initial clk = 0;
     always #5 clk= !clk;
@@ -18,7 +19,7 @@ module TAKS();
         .misobuff(),
         .mem_we(),
         .add_latch_we(),
-        .shift_ref_we()
+        .RW(rw)
     );
 
     initial begin
@@ -26,11 +27,13 @@ module TAKS();
         $dumpvars();
         $display("Testing Begin...");
         cs = 1;
-        #100
+        #105
         cs = 0;
-        #100
+        rw = 1;
+        #150
         cs = 1;
         #100
+        $display("View GTKwave for information");
 
         $finish();
     end
