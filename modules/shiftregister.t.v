@@ -20,8 +20,8 @@ module testshiftregister();
     wire            serialDataOut;
     reg[7:0]        parallelDataIn;
     reg             serialDataIn; 
-    
-    reg[1:0]       mode; 
+    wire           rewr;
+
 
     // Instantiate with parameter width = 8
     shiftregister #(8) dut(.clk(clk), 
@@ -31,11 +31,8 @@ module testshiftregister();
     		           .serialDataIn(serialDataIn), 
     		           .parallelDataOut(parallelDataOut), 
     		           .serialDataOut(serialDataOut),
-                       .mode(mode));
+                       .rewr(rewr));
     
-    initial clk=0;
-    always #10 clk = !clk;
-
 
     initial begin
 
@@ -45,21 +42,10 @@ module testshiftregister();
         `endif    
 
         //Test PARALLEL LOAD
-        @(negedge clk); mode=`PLOAD; serialDataIn=1'bX; parallelDataIn=8'b10101100;
-        @(posedge clk); #1   `ASSERT_EQ(parallelDataOut, 8'b10101100, "PARALLEL LOAD")
+        serialDataIn=1'b1; parallelDataIn=8'b10101100;
+        @(peripheralClkEdge); #10   `ASSERT_EQ(parallelDataOut, 8'b10101100, "PARALLEL LOAD")
 
-        //Test HOLD 
 
-        @(negedge clk);  mode=`HOLD; serialDataIn=1'bX; parallelDataIn=8'bX;
-        @(posedge clk); #1  `ASSERT_EQ(parallelDataOut, 8'b10101100, "HOLD")
-
-        //Test LEFT SHIFT
-        @(negedge clk);  mode=`LSHIFT; serialDataIn=1'b1; parallelDataIn=8'bX;
-        @(posedge clk); #1  `ASSERT_EQ(parallelDataOut, 8'b01011001, "LEFT SHIT")
-
-        //TEST RIGHT SHIFT
-        @(negedge clk);  mode=`RSHIFT; serialDataIn=1'b1; parallelDataIn=8'bX;
-        @(posedge clk); #1  `ASSERT_EQ(parallelDataOut, 8'b10101100, "RIGHT SHIFT")
 
     #20 $finish();  // End the simulation (otherwise the clock will keep running forever)
 

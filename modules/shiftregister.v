@@ -16,35 +16,25 @@ input               peripheralClkEdge,  // Edge indicator
 input               parallelLoad,       // 1 = Load shift reg with parallelDataIn
 input  [width-1:0]  parallelDataIn,     // Load shift reg in parallel
 input               serialDataIn,       // Load shift reg serially
-output [width-1:0]  parallelDataOut,    // Shift reg data contents
+output   reg [width-1:0]  parallelDataOut,    // Shift reg data contents
 output              serialDataOut,      // Positive edge synchronized
-
-input   [1:0]       mode
+output   reg        rewr                  //1 for write, 0 for read
 
 );
 
-    reg [width-1:0] shiftregistermem = 8'b0;
-    // assign shiftregistermem <= {width{1'b0}}
+    // always 
+    // or orgate[7:0](parallelDataOut, parallelDataIn, 8'b0); 
 
-    // always @(peripheralClkEdge) begin
+    assign parallelDataOut <= parallelDataIn;
 
-    //     `LSHIFT: begin shiftregistermem <= {shiftregistermem[width-2:0], serialDataIn}; end
+    always @(parallelDataIn[7])
+        rewr <= parallelDataIn[7];
 
-    // end
+    always @(peripheralClkEdge) begin
 
-    always @(posedge clk) begin
-
-        shiftregistermem <= {shiftregistermem[width-2:0], serialDataIn};
-
-        case (mode)
-            `HOLD:   begin shiftregistermem <= {shiftregistermem[width-1:0]}; end
-            `PLOAD:  begin shiftregistermem <= {parallelDataIn[width-1:0]}; end
-            `LSHIFT: begin shiftregistermem <= {shiftregistermem[width-2:0], serialDataIn}; end
-            `RSHIFT: begin shiftregistermem <= {serialDataIn, shiftregistermem[width-1:1]}; end
-        endcase
+        parallelDataOut <= {parallelDataOut[6:0], serialDataIn};
     end
 
-    assign parallelDataOut = shiftregistermem;
-    assign serialDataOut = shiftregistermem[width-1];
+    assign serialDataOut = parallelDataOut[width-1];
 
 endmodule
