@@ -52,7 +52,6 @@ output reg  negativeedge    // 1 clk pulse at falling edge of conditioned
         else
             signal <= 1'b1;
         assign negativeedge = ~conditioned & (signal);
-
         end
     always @ (posedge clk or posedge conditioned)
         begin
