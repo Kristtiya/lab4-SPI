@@ -1,0 +1,48 @@
+$date
+	Mon Nov 18 16:12:12 2019
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module testshiftregister $end
+$scope module dut $end
+$var wire 1 ! clk $end
+$var wire 8 " parallelDataIn [7:0] $end
+$var wire 1 # parallelLoad $end
+$var wire 1 $ peripheralClkEdge $end
+$var wire 1 % serialDataIn $end
+$var wire 1 & serialDataOut $end
+$var reg 8 ' parallelDataOut [7:0] $end
+$var reg 1 ( rewr $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+1(
+b10101010 '
+1&
+1%
+1$
+1#
+b10101010 "
+x!
+$end
+#100000
+0&
+b1010101 '
+0$
+#200000
+1&
+b10101010 '
+0%
+1$
+#300000
+0&
+b1010101 '
+1%
+0$
+#400000
