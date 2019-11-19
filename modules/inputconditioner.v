@@ -45,21 +45,15 @@ output reg  negativeedge    // 1 clk pulse at falling edge of conditioned
         synchronizer1 <= synchronizer0;
     end    
         //https://www.edaboard.com/showthread.php?40349-how-can-i-detect-the-positive-edge-of-a-signal-in-verilog
-    always @(posedge clk or negedge conditioned)
+    always @(posedge clk or negedge conditioned or posedge conditioned)
         begin
         if (~conditioned)
             signal <= 1'b0;
         else
             signal <= 1'b1;
         assign negativeedge = ~conditioned & (signal);
-        end
-    always @ (posedge clk or posedge conditioned)
-        begin
-        if (~conditioned)
-            signal <= 1'b0;
-        else
-            signal <= 1'b1;
         assign positiveedge = conditioned & (~signal);
 
         end
+
 endmodule
