@@ -33,27 +33,23 @@ module SPI_Test();
 		mosi_pin=1'b0; cs_pin = 8'b1; #80
 		mosi_pin=1'b0; cs_pin = 8'b1; #80
 		mosi_pin=1'b1; cs_pin = 8'b0; #80
-	    mosi_pin=1'b1; cs_pin = 8'b0; #80
+        mosi_pin=1'b1; cs_pin = 8'b0; #80
+	    mosi_pin=1'b0; cs_pin = 8'b0; #80
+	    mosi_pin=1'b0; cs_pin = 8'b0; #80
 		mosi_pin=1'b1; cs_pin = 8'b0; #80
+        mosi_pin=1'b1; cs_pin = 8'b0; #80
+	    mosi_pin=1'b0; cs_pin = 8'b0; #80
+	    mosi_pin=1'b0; cs_pin = 8'b0; #80
 		mosi_pin=1'b1; cs_pin = 8'b0; #80
+        mosi_pin=1'b1; cs_pin = 8'b0; #80
+	    mosi_pin=1'b0; cs_pin = 8'b0; #80
+	    mosi_pin=1'b0; cs_pin = 8'b0; #80
 		mosi_pin=1'b1; cs_pin = 8'b0; #80
-	    mosi_pin=1'b1; cs_pin = 8'b0; #80
-		mosi_pin=1'b1; cs_pin = 8'b0; #80
-		mosi_pin=1'b1; cs_pin = 8'b0; #80
-		mosi_pin=1'b1; cs_pin = 8'b0; #80
-		mosi_pin=1'b1; cs_pin = 8'b0; #80
-		mosi_pin=1'b1; cs_pin = 8'b0; #80
-		mosi_pin=1'b1; cs_pin = 8'b0; #80
-		mosi_pin=1'b1; cs_pin = 8'b0; #80
-		mosi_pin=1'b1; cs_pin = 8'b0; #80
-		mosi_pin=1'b0; cs_pin = 8'b0; #80
-		mosi_pin=1'b0; cs_pin = 8'b0; #80
-		mosi_pin=1'b0; cs_pin = 8'b0; #80
-		mosi_pin=1'b0; cs_pin = 8'b0; #80
-		mosi_pin=1'b0; cs_pin = 8'b0; #80
-		mosi_pin=1'b0; cs_pin = 8'b0; #80
+        mosi_pin=1'b1; cs_pin = 8'b0; #80
+	    mosi_pin=1'b0; cs_pin = 8'b0; #80
+	    mosi_pin=1'b0; cs_pin = 8'b0; #80
 		mosi_pin=1'b0; cs_pin = 8'b1; #80
-		mosi_pin=1'b0; cs_pin = 8'b1; #1000
+		mosi_pin=1'b0; cs_pin = 8'b1; #10000
 
 
 		$display("END");
