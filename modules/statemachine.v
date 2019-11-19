@@ -7,10 +7,11 @@ module statemachine(
     input clk,
     input cs,
     input shiftregout,
-    input RW,
+    output reg RW,
     output misobuff,
     output mem_we,
-    output reg add_latch_we
+    output reg add_latch_we,
+    input serialDataIn
 );
 parameter t_count = 15;
 
@@ -35,8 +36,10 @@ always@(posedge clk)
 generate
 genvar i;
 for (i = 1;i<t_count ;i = i +1 ) begin
+wire res;
+and andgateTimer(res,CS_N,tim[i-1]);
     always@(posedge clk)
-        tim[i] <= tim[i-1];
+        tim[i] <= res;
 end
 endgenerate
 
@@ -46,8 +49,16 @@ always@(tim[7])
 
 wire rw_enable;
 
+wire ifRead;
+
+and andgate1(ifRead,tim[7],serialDataIn);
+
+// Load parallel data in
+always@(negedge clk)
+    RW <= ifRead;
+
 // Signals end of message
-and rwandgate(mem_we,RW,tim[t_count-1]);
+// and rwandgate(mem_we,RW,tim[t_count-1]);
 
 
 endmodule
