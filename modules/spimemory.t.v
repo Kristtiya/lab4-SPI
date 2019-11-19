@@ -16,27 +16,45 @@ module SPI_Test();
     // Generate clock (50MHz)
     initial clk = 0;
     always #10 clk=!clk;    // 50MHz Clock
-    
+        // Generate clock (50MHz)
+    initial sclk_pin = 0;
+    always #80 sclk_pin=!sclk_pin;    // 50MHz Clock
         initial begin
         $dumpfile("spimemory.vcd");
         $dumpvars(0, dut);
         $display("testing");
 		$monitor("| %b | %b | %b | %b | %b |", clk, sclk_pin, mosi_pin, cs_pin, miso_pin);
-		mosi_pin=1'b0; sclk_pin = 1'b0; cs_pin = 8'b0; #100
+		mosi_pin=1'b0; cs_pin = 8'b1; #80
+        mosi_pin=1'b0; cs_pin = 8'b1; #80
+        mosi_pin=1'b0; cs_pin = 8'b1; #80
+        mosi_pin=1'b0; cs_pin = 8'b1; #80
+        mosi_pin=1'b0; cs_pin = 8'b1; #80
+	    mosi_pin=1'b0; cs_pin = 8'b1; #80
+		mosi_pin=1'b0; cs_pin = 8'b1; #80
+		mosi_pin=1'b0; cs_pin = 8'b1; #80
+		mosi_pin=1'b1; cs_pin = 8'b0; #80
+	    mosi_pin=1'b1; cs_pin = 8'b0; #80
+		mosi_pin=1'b1; cs_pin = 8'b0; #80
+		mosi_pin=1'b1; cs_pin = 8'b0; #80
+		mosi_pin=1'b1; cs_pin = 8'b0; #80
+	    mosi_pin=1'b1; cs_pin = 8'b0; #80
+		mosi_pin=1'b1; cs_pin = 8'b0; #80
+		mosi_pin=1'b1; cs_pin = 8'b0; #80
+		mosi_pin=1'b1; cs_pin = 8'b0; #80
+		mosi_pin=1'b1; cs_pin = 8'b0; #80
+		mosi_pin=1'b1; cs_pin = 8'b0; #80
+		mosi_pin=1'b1; cs_pin = 8'b0; #80
+		mosi_pin=1'b1; cs_pin = 8'b0; #80
+		mosi_pin=1'b1; cs_pin = 8'b0; #80
+		mosi_pin=1'b0; cs_pin = 8'b0; #80
+		mosi_pin=1'b0; cs_pin = 8'b0; #80
+		mosi_pin=1'b0; cs_pin = 8'b0; #80
+		mosi_pin=1'b0; cs_pin = 8'b0; #80
+		mosi_pin=1'b0; cs_pin = 8'b0; #80
+		mosi_pin=1'b0; cs_pin = 8'b0; #80
+		mosi_pin=1'b0; cs_pin = 8'b1; #80
+		mosi_pin=1'b0; cs_pin = 8'b1; #1000
 
-		mosi_pin=1'b1; sclk_pin = 1'b0; cs_pin = 8'b0; #100
-
-		mosi_pin=1'b1; sclk_pin = 1'b1; cs_pin = 8'b0; #100
-
-	    mosi_pin=1'b0; sclk_pin = 1'b1; cs_pin = 8'b0; #100
-
-		mosi_pin=1'b0; sclk_pin = 1'b0; cs_pin = 8'b0; #100
-
-		mosi_pin=1'b0; sclk_pin = 1'b0; cs_pin = 8'b0; #100
-
-		mosi_pin=1'b0; sclk_pin = 1'b1; cs_pin = 8'b0; #100
-
-	    mosi_pin=1'b0; sclk_pin = 1'b1; cs_pin = 8'b0; #100
 
 		$display("END");
         $finish();

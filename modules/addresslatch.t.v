@@ -1,7 +1,7 @@
 `include "addresslatch.v"
 
 module Address_Latch_Test();
-    reg[6:0] D;
+    reg[7:0] D;
     reg clk;
     reg enable;
 
