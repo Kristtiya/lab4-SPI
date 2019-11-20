@@ -5,7 +5,7 @@ input enable,
 output reg Q
 );
     initial Q =  0;
-    always @ (posedge clk) begin
+    always @ (negedge clk) begin
         if (enable)begin
             Q <= D;
             end

@@ -44,14 +44,14 @@ end
 endgenerate
 
 // Signals the RW phase of the message
-always@(tim[7]) 
+always@(tim[7])
     add_latch_we <= tim[7];
 
 wire rw_enable;
 
 wire ifRead;
 
-and andgate1(ifRead,tim[7],serialDataIn);
+and andgate1(ifRead,tim[8],serialDataIn);
 
 // Load parallel data in
 always@(negedge clk)

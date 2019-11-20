@@ -1,5 +1,3 @@
-`timescale 1 ns / 1 ps
-
 //------------------------------------------------------------------------
 // Input Conditioner test bench
 //------------------------------------------------------------------------
@@ -54,7 +52,7 @@ module testConditioner();
 	    $display("%t | %d | %d | %d | %d | %d |", $time, clk, pin, conditioned, rising, falling); #20;
 	end
 
-    repeat(10) begin
+    repeat(10) begin 
     pin = 0;
 	$display("%t | %d | %d | %d | %d | %d |", $time, clk, pin, conditioned, rising, falling); #20;
 	end

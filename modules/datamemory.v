@@ -35,11 +35,11 @@ module datamemory
     reg[31:0] k;
     always@(posedge reset)begin
       if (reset) begin
-        for (k =0 ;k<3'b111 ;k = k + 1 ) begin
+        for (k =0 ;k<7'b1111111 ;k = k + 1 ) begin
           memory[k] = 8'b0;
           end
-          // memory[7] = 8'b101010; //points to the begening of the stack
-          //                      //source -> Mars
+          memory[76] = 8'd5; //points to the begening of the stack
+                               //source -> Mars
       end
     end
 

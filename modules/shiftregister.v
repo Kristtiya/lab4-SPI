@@ -17,12 +17,14 @@ input               parallelLoad,       // 1 = Load shift reg with parallelDataI
 input  [width-1:0]  parallelDataIn,     // Load shift reg in parallel
 input               serialDataIn,       // Load shift reg serially
 output   reg [width-1:0]  parallelDataOut,    // Shift reg data contents
-output              serialDataOut,      // Positive edge synchronized
+output   reg        serialDataOut,      // Positive edge synchronized
 output   reg        rewr                  //1 for write, 0 for read
 
 );
-    always @(parallelLoad)
-        parallelDataOut <= parallelDataIn;
+    reg[width-1:0] mem;
+
+    always @(posedge parallelLoad)
+        mem <= parallelDataIn;
 
     always @(parallelDataIn[7])
         rewr <= parallelDataIn[7];
@@ -32,6 +34,10 @@ output   reg        rewr                  //1 for write, 0 for read
         parallelDataOut <= {parallelDataOut[6:0], serialDataIn};
     end
 
-    assign serialDataOut = parallelDataOut[width-1];
+    always @(peripheralClkEdge) begin
+
+      serialDataOut <= mem[7];
+      mem <= {mem[6:0], 1'b0};
+    end
 
 endmodule
