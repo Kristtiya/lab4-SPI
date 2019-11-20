@@ -1,0 +1,301 @@
+
+*** Running vivado
+    with args -log Address_Latch.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source Address_Latch.tcl
+
+
+****** Vivado v2019.1 (64-bit)
+  **** SW Build 2552052 on Fri May 24 14:47:09 MDT 2019
+  **** IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+source Address_Latch.tcl -notrace
+Command: synth_design -top Address_Latch -part xc7z010clg400-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: [Device 21-403] Loading part xc7z010clg400-1
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 27426 
+WARNING: [Synth 8-2490] overwriting previous definition of module inputconditioner [/home/coreycl/Documents/CompArc/lab4-SPI/xylinx/xylinx.srcs/sources_1/imports/modules/inputconditioner.v:8]
+WARNING: [Synth 8-2490] overwriting previous definition of module statemachine [/home/coreycl/Documents/CompArc/lab4-SPI/xylinx/xylinx.srcs/sources_1/imports/modules/statemachine.v:6]
+WARNING: [Synth 8-2490] overwriting previous definition of module shiftregister [/home/coreycl/Documents/CompArc/lab4-SPI/xylinx/xylinx.srcs/sources_1/imports/modules/shiftregister.v:11]
+WARNING: [Synth 8-2490] overwriting previous definition of module datamemory [/home/coreycl/Documents/CompArc/lab4-SPI/xylinx/xylinx.srcs/sources_1/imports/modules/datamemory.v:8]
+WARNING: [Synth 8-2490] overwriting previous definition of module Address_Latch [/home/coreycl/Documents/CompArc/lab4-SPI/xylinx/xylinx.srcs/sources_1/imports/modules/addresslatch.v:1]
+WARNING: [Synth 8-2490] overwriting previous definition of module d_flipflop [/home/coreycl/Documents/CompArc/lab4-SPI/xylinx/xylinx.srcs/sources_1/imports/modules/dflipflop.v:1]
+WARNING: [Synth 8-2490] overwriting previous definition of module enablenot [/home/coreycl/Documents/CompArc/lab4-SPI/xylinx/xylinx.srcs/sources_1/imports/modules/enable_not.v:1]
+WARNING: [Synth 8-2490] overwriting previous definition of module spiMemory [/home/coreycl/Documents/CompArc/lab4-SPI/xylinx/xylinx.srcs/sources_1/imports/modules/spimemory.v:12]
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1712.617 ; gain = 156.684 ; free physical = 5242 ; free virtual = 11921
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'Address_Latch' [/home/coreycl/Documents/CompArc/lab4-SPI/xylinx/xylinx.srcs/sources_1/imports/modules/addresslatch.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'Address_Latch' (1#1) [/home/coreycl/Documents/CompArc/lab4-SPI/xylinx/xylinx.srcs/sources_1/imports/modules/addresslatch.v:1]
+WARNING: [Synth 8-3331] design Address_Latch has unconnected port D[7]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1742.492 ; gain = 186.559 ; free physical = 5275 ; free virtual = 11954
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1760.305 ; gain = 204.371 ; free physical = 5270 ; free virtual = 11949
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1760.305 ; gain = 204.371 ; free physical = 5270 ; free virtual = 11949
+---------------------------------------------------------------------------------
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/coreycl/Documents/CompArc/lab4-SPI/xylinx/xylinx.srcs/constrs_1/imports/Downloads/ZYBO_Master.xdc.xdc]
+WARNING: [Vivado 12-584] No ports matched 'led[0]'. [/home/coreycl/Documents/CompArc/lab4-SPI/xylinx/xylinx.srcs/constrs_1/imports/Downloads/ZYBO_Master.xdc.xdc:27]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/coreycl/Documents/CompArc/lab4-SPI/xylinx/xylinx.srcs/constrs_1/imports/Downloads/ZYBO_Master.xdc.xdc:27]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[1]'. [/home/coreycl/Documents/CompArc/lab4-SPI/xylinx/xylinx.srcs/constrs_1/imports/Downloads/ZYBO_Master.xdc.xdc:28]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/coreycl/Documents/CompArc/lab4-SPI/xylinx/xylinx.srcs/constrs_1/imports/Downloads/ZYBO_Master.xdc.xdc:28]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[2]'. [/home/coreycl/Documents/CompArc/lab4-SPI/xylinx/xylinx.srcs/constrs_1/imports/Downloads/ZYBO_Master.xdc.xdc:29]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/coreycl/Documents/CompArc/lab4-SPI/xylinx/xylinx.srcs/constrs_1/imports/Downloads/ZYBO_Master.xdc.xdc:29]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[3]'. [/home/coreycl/Documents/CompArc/lab4-SPI/xylinx/xylinx.srcs/constrs_1/imports/Downloads/ZYBO_Master.xdc.xdc:30]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/coreycl/Documents/CompArc/lab4-SPI/xylinx/xylinx.srcs/constrs_1/imports/Downloads/ZYBO_Master.xdc.xdc:30]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'jb_p[0]'. [/home/coreycl/Documents/CompArc/lab4-SPI/xylinx/xylinx.srcs/constrs_1/imports/Downloads/ZYBO_Master.xdc.xdc:81]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/coreycl/Documents/CompArc/lab4-SPI/xylinx/xylinx.srcs/constrs_1/imports/Downloads/ZYBO_Master.xdc.xdc:81]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'jb_p[1]'. [/home/coreycl/Documents/CompArc/lab4-SPI/xylinx/xylinx.srcs/constrs_1/imports/Downloads/ZYBO_Master.xdc.xdc:83]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/coreycl/Documents/CompArc/lab4-SPI/xylinx/xylinx.srcs/constrs_1/imports/Downloads/ZYBO_Master.xdc.xdc:83]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'jb_p[2]'. [/home/coreycl/Documents/CompArc/lab4-SPI/xylinx/xylinx.srcs/constrs_1/imports/Downloads/ZYBO_Master.xdc.xdc:85]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/coreycl/Documents/CompArc/lab4-SPI/xylinx/xylinx.srcs/constrs_1/imports/Downloads/ZYBO_Master.xdc.xdc:85]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'jb_p[3]'. [/home/coreycl/Documents/CompArc/lab4-SPI/xylinx/xylinx.srcs/constrs_1/imports/Downloads/ZYBO_Master.xdc.xdc:87]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/coreycl/Documents/CompArc/lab4-SPI/xylinx/xylinx.srcs/constrs_1/imports/Downloads/ZYBO_Master.xdc.xdc:87]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'jc_p[0]'. [/home/coreycl/Documents/CompArc/lab4-SPI/xylinx/xylinx.srcs/constrs_1/imports/Downloads/ZYBO_Master.xdc.xdc:92]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/coreycl/Documents/CompArc/lab4-SPI/xylinx/xylinx.srcs/constrs_1/imports/Downloads/ZYBO_Master.xdc.xdc:92]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+Finished Parsing XDC File [/home/coreycl/Documents/CompArc/lab4-SPI/xylinx/xylinx.srcs/constrs_1/imports/Downloads/ZYBO_Master.xdc.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/coreycl/Documents/CompArc/lab4-SPI/xylinx/xylinx.srcs/constrs_1/imports/Downloads/ZYBO_Master.xdc.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/Address_Latch_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/Address_Latch_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1857.008 ; gain = 0.000 ; free physical = 5183 ; free virtual = 11863
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1857.008 ; gain = 0.000 ; free physical = 5183 ; free virtual = 11863
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 1857.008 ; gain = 301.074 ; free physical = 5245 ; free virtual = 11925
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z010clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 1857.008 ; gain = 301.074 ; free physical = 5245 ; free virtual = 11925
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 1857.008 ; gain = 301.074 ; free physical = 5245 ; free virtual = 11925
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 1857.008 ; gain = 301.074 ; free physical = 5245 ; free virtual = 11926
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Registers : 
+	                7 Bit    Registers := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module Address_Latch 
+Detailed RTL Component Info : 
++---Registers : 
+	                7 Bit    Registers := 1     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 80 (col length:40)
+BRAMs: 120 (col length: RAMB18 40 RAMB36 20)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+WARNING: [Synth 8-3331] design Address_Latch has unconnected port D[7]
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 1857.008 ; gain = 301.074 ; free physical = 5243 ; free virtual = 11926
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 1857.008 ; gain = 301.074 ; free physical = 5118 ; free virtual = 11802
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 1857.008 ; gain = 301.074 ; free physical = 5118 ; free virtual = 11802
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 1857.008 ; gain = 301.074 ; free physical = 5118 ; free virtual = 11801
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 1869.883 ; gain = 313.949 ; free physical = 5118 ; free virtual = 11801
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 1869.883 ; gain = 313.949 ; free physical = 5118 ; free virtual = 11801
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 1869.883 ; gain = 313.949 ; free physical = 5118 ; free virtual = 11801
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 1869.883 ; gain = 313.949 ; free physical = 5118 ; free virtual = 11801
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 1869.883 ; gain = 313.949 ; free physical = 5118 ; free virtual = 11801
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 1869.883 ; gain = 313.949 ; free physical = 5118 ; free virtual = 11801
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-----+------+
+|      |Cell |Count |
++------+-----+------+
+|1     |BUFG |     1|
+|2     |FDRE |     7|
+|3     |IBUF |     9|
+|4     |OBUF |     7|
++------+-----+------+
+
+Report Instance Areas: 
++------+---------+-------+------+
+|      |Instance |Module |Cells |
++------+---------+-------+------+
+|1     |top      |       |    24|
++------+---------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 1869.883 ; gain = 313.949 ; free physical = 5118 ; free virtual = 11801
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 1869.883 ; gain = 217.246 ; free physical = 5175 ; free virtual = 11858
+Synthesis Optimization Complete : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 1869.891 ; gain = 313.949 ; free physical = 5175 ; free virtual = 11858
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1879.789 ; gain = 0.000 ; free physical = 5121 ; free virtual = 11804
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+12 Infos, 19 Warnings, 9 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 1879.789 ; gain = 478.016 ; free physical = 5212 ; free virtual = 11895
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1879.789 ; gain = 0.000 ; free physical = 5212 ; free virtual = 11895
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint '/home/coreycl/Documents/CompArc/lab4-SPI/xylinx/xylinx.runs/synth_1/Address_Latch.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file Address_Latch_utilization_synth.rpt -pb Address_Latch_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Wed Nov 20 11:07:30 2019...

@@ -7,7 +7,6 @@ module TAKS();
 
     reg clk;
     reg cs;
-    reg rw;
 
     initial clk = 0;
     always #5 clk= !clk;
@@ -29,7 +28,6 @@ module TAKS();
         cs = 1;
         #105
         cs = 0;
-        rw = 1;
         #150
         cs = 1;
         #100

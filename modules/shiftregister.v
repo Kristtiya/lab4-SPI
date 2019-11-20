@@ -6,7 +6,7 @@
 //      - parallel in, serial out
 //------------------------------------------------------------------------
 
-`include "shiftregmodes.v"
+// `include "shiftregmodes.v"
 
 module shiftregister
 #(parameter width = 8)

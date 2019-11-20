@@ -1,0 +1,376 @@
+
+*** Running vivado
+    with args -log spi_wrapper.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source spi_wrapper.tcl
+
+
+****** Vivado v2019.1 (64-bit)
+  **** SW Build 2552052 on Fri May 24 14:47:09 MDT 2019
+  **** IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+source spi_wrapper.tcl -notrace
+Command: synth_design -top spi_wrapper -part xc7z010clg400-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: [Device 21-403] Loading part xc7z010clg400-1
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 2595 
+WARNING: [Synth 8-2490] overwriting previous definition of module datamemory [/home/coreycl/Documents/CompArc/lab4-SPI/modules/datamemory.v:8]
+WARNING: [Synth 8-2490] overwriting previous definition of module d_flipflop [/home/coreycl/Documents/CompArc/lab4-SPI/modules/dflipflop.v:1]
+WARNING: [Synth 8-2490] overwriting previous definition of module enablenot [/home/coreycl/Documents/CompArc/lab4-SPI/modules/enable_not.v:1]
+WARNING: [Synth 8-2490] overwriting previous definition of module inputconditioner [/home/coreycl/Documents/CompArc/lab4-SPI/modules/inputconditioner.v:8]
+WARNING: [Synth 8-2490] overwriting previous definition of module statemachine [/home/coreycl/Documents/CompArc/lab4-SPI/modules/statemachine.v:6]
+WARNING: [Synth 8-2490] overwriting previous definition of module shiftregister [/home/coreycl/Documents/CompArc/lab4-SPI/modules/shiftregister.v:11]
+WARNING: [Synth 8-2490] overwriting previous definition of module datamemory [/home/coreycl/Documents/CompArc/lab4-SPI/modules/datamemory.v:8]
+WARNING: [Synth 8-2490] overwriting previous definition of module Address_Latch [/home/coreycl/Documents/CompArc/lab4-SPI/modules/addresslatch.v:1]
+WARNING: [Synth 8-2490] overwriting previous definition of module d_flipflop [/home/coreycl/Documents/CompArc/lab4-SPI/modules/dflipflop.v:1]
+WARNING: [Synth 8-2490] overwriting previous definition of module enablenot [/home/coreycl/Documents/CompArc/lab4-SPI/modules/enable_not.v:1]
+WARNING: [Synth 8-2490] overwriting previous definition of module spiMemory [/home/coreycl/Documents/CompArc/lab4-SPI/modules/spimemory.v:12]
+WARNING: [Synth 8-2490] overwriting previous definition of module statemachine [/home/coreycl/Documents/CompArc/lab4-SPI/modules/statemachine.v:6]
+WARNING: [Synth 8-2490] overwriting previous definition of module inputconditioner [/home/coreycl/Documents/CompArc/lab4-SPI/modules/inputconditioner.v:8]
+WARNING: [Synth 8-2490] overwriting previous definition of module shiftregister [/home/coreycl/Documents/CompArc/lab4-SPI/modules/shiftregister.v:11]
+WARNING: [Synth 8-2490] overwriting previous definition of module Address_Latch [/home/coreycl/Documents/CompArc/lab4-SPI/modules/addresslatch.v:1]
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1712.586 ; gain = 154.652 ; free physical = 4285 ; free virtual = 11304
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'spi_wrapper' [/home/coreycl/Documents/CompArc/lab4-SPI/modules/SPIwrapper.v:7]
+INFO: [Synth 8-6157] synthesizing module 'spiMemory' [/home/coreycl/Documents/CompArc/lab4-SPI/modules/spimemory.v:12]
+INFO: [Synth 8-6157] synthesizing module 'inputconditioner' [/home/coreycl/Documents/CompArc/lab4-SPI/modules/inputconditioner.v:8]
+	Parameter counterwidth bound to: 3 - type: integer 
+	Parameter waittime bound to: 3 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'inputconditioner' (1#1) [/home/coreycl/Documents/CompArc/lab4-SPI/modules/inputconditioner.v:8]
+INFO: [Synth 8-6157] synthesizing module 'shiftregister' [/home/coreycl/Documents/CompArc/lab4-SPI/modules/shiftregister.v:11]
+	Parameter width bound to: 8 - type: integer 
+WARNING: [Synth 8-567] referenced signal 'parallelDataOut' should be on the sensitivity list [/home/coreycl/Documents/CompArc/lab4-SPI/modules/shiftregister.v:32]
+WARNING: [Synth 8-567] referenced signal 'serialDataIn' should be on the sensitivity list [/home/coreycl/Documents/CompArc/lab4-SPI/modules/shiftregister.v:32]
+WARNING: [Synth 8-567] referenced signal 'mem' should be on the sensitivity list [/home/coreycl/Documents/CompArc/lab4-SPI/modules/shiftregister.v:37]
+INFO: [Synth 8-6155] done synthesizing module 'shiftregister' (2#1) [/home/coreycl/Documents/CompArc/lab4-SPI/modules/shiftregister.v:11]
+INFO: [Synth 8-6157] synthesizing module 'datamemory' [/home/coreycl/Documents/CompArc/lab4-SPI/modules/datamemory.v:8]
+	Parameter addresswidth bound to: 7 - type: integer 
+	Parameter depth bound to: 128 - type: integer 
+	Parameter width bound to: 8 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'datamemory' (3#1) [/home/coreycl/Documents/CompArc/lab4-SPI/modules/datamemory.v:8]
+INFO: [Synth 8-6157] synthesizing module 'statemachine' [/home/coreycl/Documents/CompArc/lab4-SPI/modules/statemachine.v:6]
+	Parameter t_count bound to: 15 - type: integer 
+WARNING: [Synth 8-3848] Net misobuff in module/entity statemachine does not have driver. [/home/coreycl/Documents/CompArc/lab4-SPI/modules/statemachine.v:11]
+WARNING: [Synth 8-3848] Net mem_we in module/entity statemachine does not have driver. [/home/coreycl/Documents/CompArc/lab4-SPI/modules/statemachine.v:12]
+INFO: [Synth 8-6155] done synthesizing module 'statemachine' (4#1) [/home/coreycl/Documents/CompArc/lab4-SPI/modules/statemachine.v:6]
+INFO: [Synth 8-6157] synthesizing module 'Address_Latch' [/home/coreycl/Documents/CompArc/lab4-SPI/modules/addresslatch.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'Address_Latch' (5#1) [/home/coreycl/Documents/CompArc/lab4-SPI/modules/addresslatch.v:1]
+INFO: [Synth 8-6157] synthesizing module 'd_flipflop' [/home/coreycl/Documents/CompArc/lab4-SPI/modules/dflipflop.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'd_flipflop' (6#1) [/home/coreycl/Documents/CompArc/lab4-SPI/modules/dflipflop.v:1]
+WARNING: [Synth 8-3848] Net leds in module/entity spiMemory does not have driver. [/home/coreycl/Documents/CompArc/lab4-SPI/modules/spimemory.v:20]
+INFO: [Synth 8-6155] done synthesizing module 'spiMemory' (7#1) [/home/coreycl/Documents/CompArc/lab4-SPI/modules/spimemory.v:12]
+INFO: [Synth 8-6155] done synthesizing module 'spi_wrapper' (8#1) [/home/coreycl/Documents/CompArc/lab4-SPI/modules/SPIwrapper.v:7]
+WARNING: [Synth 8-3331] design Address_Latch has unconnected port D[7]
+WARNING: [Synth 8-3331] design statemachine has unconnected port misobuff
+WARNING: [Synth 8-3331] design statemachine has unconnected port mem_we
+WARNING: [Synth 8-3331] design statemachine has unconnected port shiftregout
+WARNING: [Synth 8-3331] design shiftregister has unconnected port clk
+WARNING: [Synth 8-3331] design shiftregister has unconnected port peripheralClkEdge
+WARNING: [Synth 8-3331] design spiMemory has unconnected port leds[3]
+WARNING: [Synth 8-3331] design spiMemory has unconnected port leds[2]
+WARNING: [Synth 8-3331] design spiMemory has unconnected port leds[1]
+WARNING: [Synth 8-3331] design spiMemory has unconnected port leds[0]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1749.492 ; gain = 191.559 ; free physical = 4309 ; free virtual = 11329
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1767.305 ; gain = 209.371 ; free physical = 4308 ; free virtual = 11329
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1767.305 ; gain = 209.371 ; free physical = 4308 ; free virtual = 11329
+---------------------------------------------------------------------------------
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/coreycl/Documents/CompArc/lab4-SPI/xylinx/xylinx.srcs/constrs_1/imports/Downloads/ZYBO_Master.xdc]
+WARNING: [Vivado 12-584] No ports matched 'jc_p[0]'. [/home/coreycl/Documents/CompArc/lab4-SPI/xylinx/xylinx.srcs/constrs_1/imports/Downloads/ZYBO_Master.xdc:92]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/coreycl/Documents/CompArc/lab4-SPI/xylinx/xylinx.srcs/constrs_1/imports/Downloads/ZYBO_Master.xdc:92]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+Finished Parsing XDC File [/home/coreycl/Documents/CompArc/lab4-SPI/xylinx/xylinx.srcs/constrs_1/imports/Downloads/ZYBO_Master.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/coreycl/Documents/CompArc/lab4-SPI/xylinx/xylinx.srcs/constrs_1/imports/Downloads/ZYBO_Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/spi_wrapper_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/spi_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1915.977 ; gain = 0.000 ; free physical = 4212 ; free virtual = 11233
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 1915.977 ; gain = 0.000 ; free physical = 4212 ; free virtual = 11233
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:09 ; elapsed = 00:00:12 . Memory (MB): peak = 1915.977 ; gain = 358.043 ; free physical = 4283 ; free virtual = 11303
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z010clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:09 ; elapsed = 00:00:12 . Memory (MB): peak = 1915.977 ; gain = 358.043 ; free physical = 4283 ; free virtual = 11303
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:09 ; elapsed = 00:00:12 . Memory (MB): peak = 1915.977 ; gain = 358.043 ; free physical = 4283 ; free virtual = 11303
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 1915.977 ; gain = 358.043 ; free physical = 4270 ; free virtual = 11292
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 3     
+	                7 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 38    
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 128   
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module spi_wrapper 
+Detailed RTL Component Info : 
++---Registers : 
+	                4 Bit    Registers := 1     
+Module inputconditioner 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 7     
+Module shiftregister 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 1     
+Module datamemory 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 2     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 128   
+Module statemachine 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 16    
+Module Address_Latch 
+Detailed RTL Component Info : 
++---Registers : 
+	                7 Bit    Registers := 1     
+Module d_flipflop 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 80 (col length:40)
+BRAMs: 120 (col length: RAMB18 40 RAMB36 20)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\DUT/DFF/Q_reg )
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin mem_reg[1] with 1st driver pin 'DUT/shift_register/mem_reg[7]/Q' [/home/coreycl/Documents/CompArc/lab4-SPI/modules/shiftregister.v:27]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin mem_reg[1] with 2nd driver pin 'GND' [/home/coreycl/Documents/CompArc/lab4-SPI/modules/shiftregister.v:27]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net mem_reg[1] is connected to at least one constant driver which has been preserved, other driver is ignored [/home/coreycl/Documents/CompArc/lab4-SPI/modules/shiftregister.v:27]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin mem_reg[1] with 1st driver pin 'DUT/shift_register/mem_reg[6]/Q' [/home/coreycl/Documents/CompArc/lab4-SPI/modules/shiftregister.v:27]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin mem_reg[1] with 2nd driver pin 'GND' [/home/coreycl/Documents/CompArc/lab4-SPI/modules/shiftregister.v:27]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net mem_reg[1] is connected to at least one constant driver which has been preserved, other driver is ignored [/home/coreycl/Documents/CompArc/lab4-SPI/modules/shiftregister.v:27]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin mem_reg[1] with 1st driver pin 'DUT/shift_register/mem_reg[5]/Q' [/home/coreycl/Documents/CompArc/lab4-SPI/modules/shiftregister.v:27]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin mem_reg[1] with 2nd driver pin 'GND' [/home/coreycl/Documents/CompArc/lab4-SPI/modules/shiftregister.v:27]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net mem_reg[1] is connected to at least one constant driver which has been preserved, other driver is ignored [/home/coreycl/Documents/CompArc/lab4-SPI/modules/shiftregister.v:27]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin mem_reg[1] with 1st driver pin 'DUT/shift_register/mem_reg[4]/Q' [/home/coreycl/Documents/CompArc/lab4-SPI/modules/shiftregister.v:27]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin mem_reg[1] with 2nd driver pin 'GND' [/home/coreycl/Documents/CompArc/lab4-SPI/modules/shiftregister.v:27]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net mem_reg[1] is connected to at least one constant driver which has been preserved, other driver is ignored [/home/coreycl/Documents/CompArc/lab4-SPI/modules/shiftregister.v:27]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin mem_reg[1] with 1st driver pin 'DUT/shift_register/mem_reg[3]/Q' [/home/coreycl/Documents/CompArc/lab4-SPI/modules/shiftregister.v:27]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin mem_reg[1] with 2nd driver pin 'GND' [/home/coreycl/Documents/CompArc/lab4-SPI/modules/shiftregister.v:27]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net mem_reg[1] is connected to at least one constant driver which has been preserved, other driver is ignored [/home/coreycl/Documents/CompArc/lab4-SPI/modules/shiftregister.v:27]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin mem_reg[1] with 1st driver pin 'DUT/shift_register/mem_reg[2]/Q' [/home/coreycl/Documents/CompArc/lab4-SPI/modules/shiftregister.v:27]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin mem_reg[1] with 2nd driver pin 'GND' [/home/coreycl/Documents/CompArc/lab4-SPI/modules/shiftregister.v:27]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net mem_reg[1] is connected to at least one constant driver which has been preserved, other driver is ignored [/home/coreycl/Documents/CompArc/lab4-SPI/modules/shiftregister.v:27]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin mem_reg[1] with 1st driver pin 'DUT/shift_register/mem_reg[1]/Q' [/home/coreycl/Documents/CompArc/lab4-SPI/modules/shiftregister.v:27]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin mem_reg[1] with 2nd driver pin 'GND' [/home/coreycl/Documents/CompArc/lab4-SPI/modules/shiftregister.v:27]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net mem_reg[1] is connected to at least one constant driver which has been preserved, other driver is ignored [/home/coreycl/Documents/CompArc/lab4-SPI/modules/shiftregister.v:27]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin mem_reg[0] with 1st driver pin 'DUT/shift_register/mem_reg[0]/Q' [/home/coreycl/Documents/CompArc/lab4-SPI/modules/shiftregister.v:27]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin mem_reg[0] with 2nd driver pin 'GND' [/home/coreycl/Documents/CompArc/lab4-SPI/modules/shiftregister.v:27]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net mem_reg[0] is connected to at least one constant driver which has been preserved, other driver is ignored [/home/coreycl/Documents/CompArc/lab4-SPI/modules/shiftregister.v:27]
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:15 . Memory (MB): peak = 1915.977 ; gain = 358.043 ; free physical = 4269 ; free virtual = 11294
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:18 ; elapsed = 00:00:21 . Memory (MB): peak = 1915.977 ; gain = 358.043 ; free physical = 4148 ; free virtual = 11172
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:18 ; elapsed = 00:00:21 . Memory (MB): peak = 1915.977 ; gain = 358.043 ; free physical = 4148 ; free virtual = 11172
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:18 ; elapsed = 00:00:21 . Memory (MB): peak = 1915.977 ; gain = 358.043 ; free physical = 4148 ; free virtual = 11172
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:19 ; elapsed = 00:00:22 . Memory (MB): peak = 1915.977 ; gain = 358.043 ; free physical = 4149 ; free virtual = 11171
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:19 ; elapsed = 00:00:22 . Memory (MB): peak = 1915.977 ; gain = 358.043 ; free physical = 4149 ; free virtual = 11171
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:19 ; elapsed = 00:00:22 . Memory (MB): peak = 1915.977 ; gain = 358.043 ; free physical = 4149 ; free virtual = 11171
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:19 ; elapsed = 00:00:22 . Memory (MB): peak = 1915.977 ; gain = 358.043 ; free physical = 4149 ; free virtual = 11171
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:19 ; elapsed = 00:00:22 . Memory (MB): peak = 1915.977 ; gain = 358.043 ; free physical = 4149 ; free virtual = 11171
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:19 ; elapsed = 00:00:22 . Memory (MB): peak = 1915.977 ; gain = 358.043 ; free physical = 4149 ; free virtual = 11171
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+------+------+
+|      |Cell  |Count |
++------+------+------+
+|1     |BUFG  |     1|
+|2     |FDRE  |     1|
+|3     |IBUF  |     2|
+|4     |OBUF  |     2|
+|5     |OBUFT |     3|
++------+------+------+
+
+Report Instance Areas: 
++------+---------+-------+------+
+|      |Instance |Module |Cells |
++------+---------+-------+------+
+|1     |top      |       |     9|
++------+---------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:19 ; elapsed = 00:00:22 . Memory (MB): peak = 1915.977 ; gain = 358.043 ; free physical = 4149 ; free virtual = 11171
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 24 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:17 ; elapsed = 00:00:20 . Memory (MB): peak = 1915.977 ; gain = 209.371 ; free physical = 4204 ; free virtual = 11227
+Synthesis Optimization Complete : Time (s): cpu = 00:00:19 ; elapsed = 00:00:22 . Memory (MB): peak = 1915.984 ; gain = 358.043 ; free physical = 4204 ; free virtual = 11227
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1915.984 ; gain = 0.000 ; free physical = 4152 ; free virtual = 11174
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+27 Infos, 32 Warnings, 25 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:24 ; elapsed = 00:00:26 . Memory (MB): peak = 1915.984 ; gain = 514.211 ; free physical = 4252 ; free virtual = 11274
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1915.984 ; gain = 0.000 ; free physical = 4252 ; free virtual = 11274
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint '/home/coreycl/Documents/CompArc/lab4-SPI/xylinx/xylinx.runs/synth_3/spi_wrapper.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file spi_wrapper_utilization_synth.rpt -pb spi_wrapper_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Wed Nov 20 11:49:18 2019...

@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:47:09 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Wed Nov 20 11:48:42 2019
+# Process ID: 2539
+# Current directory: /home/coreycl/Documents/CompArc/lab4-SPI/xylinx/xylinx.runs/synth_3
+# Command line: vivado -log spi_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source spi_wrapper.tcl
+# Log file: /home/coreycl/Documents/CompArc/lab4-SPI/xylinx/xylinx.runs/synth_3/spi_wrapper.vds
+# Journal file: /home/coreycl/Documents/CompArc/lab4-SPI/xylinx/xylinx.runs/synth_3/vivado.jou
+#-----------------------------------------------------------
+source spi_wrapper.tcl -notrace
